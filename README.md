@@ -1,13 +1,17 @@
 ocstyle
 =======
 
-Objective-C style checker
+ocstyle is an Objective-C style checker. This branch is a modified version to comply with the [Google Objective C Style Guide](http://google-styleguide.googlecode.com/svn/trunk/objcguide.xml).
 
 # Installation
 
-```
-pip install ocstyle
-```
+	git clone git@github.com:aogilvie/ocstyle.git
+	python easy_install pip
+	pip install -e ./
+
+# Usage
+
+	ocstyle test.*
 
 # Example
 
@@ -71,18 +75,7 @@ This way we ensure everyone maintains a consistent coding style with a minimum o
 
 This is a pretty early stage project.  We fully expect bugs and feature requests!
 
-One notable absence is that right now style rules are not configurable.  For example, we use the following style
-for message implementations:
-
-```objc
-+(void) someMessage:(NSString*)subdomain;
-{
-}
-```
-
-Note the inclusion of the `;` and the `{` being on the next line. We like this style because it makes it easy to copy
-and paste from `.h` to `.m` and back, but maybe you have your own preferences.  We'd be very happy to accept pull
-requests that make ocstyle more configurable.
+One notable absence is that right now style rules are not configurable.  
 
 For the motivated pull requesters out there, other notable TODOs include:
 
