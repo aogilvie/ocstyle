@@ -111,8 +111,7 @@ class RulesTest(unittest.TestCase):
   def testMethod(self):
     """Test for method."""
     self.assertMatches(rules.method, '''
-+ (NSString *)serverAddressWithSubdomain:(NSString *)subdomain;
-{
++ (NSString *)serverAddressWithSubdomain:(NSString *)subdomain {
     return FORMAT(@"%@://%@", [self serverProtocol], [self serverHostWithSubdomain:subdomain]);
 }
     '''.strip())

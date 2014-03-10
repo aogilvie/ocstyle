@@ -58,6 +58,13 @@ ERROR: 3:42 [68] - MissingSemicolon - Expected a semicolon
 ERROR: 4:35 [104] - BadLocalVariableName - Local variable must start with a lower case letter```
 ```
 
+# Running Unit Tests
+
+This pip package contains nose tests. To test, run the following in the root of this repository:
+
+	pip install nose (if you don't have nose)
+	nosetests
+
 # Goal
 
 Make it easy to share and enforce style rules for Objective C.  The less human time we spend thinking about whitespace

@@ -34,43 +34,20 @@
     double _y;
 }
 
-+ (NSString *)_serverAddressWithSubdomain:(NSString *)subdomain;
-{
++ (NSString *)_serverAddressWithSubdomain:(NSString *)subdomain {
     // Private selectors ok in implementation files.
     goto SomeLabel;
 }
 
 
-+ (NSString *)serverAddressWithSubdomain:(NSString *)subdomain;
-{
-    return FORMAT(@"%@://%@", [self serverProtocol], [self serverHostWithSubdomain:subdomain]);
-}
-
-
- // EXPECT+1: MissingSemicolon, MissingNewline
-+ (void)badFormat:(NSString *)subdomain{
-}
-
-+ (void)badFormat:(NSString *)subdomain;
- { // EXPECT: ExtraSpace
-}
-
-
 // EXPECT+1: ExtraSpace
-+ (void)badFormat:(NSString *)subdomain ;
-{
++ (NSString *)serverAddressWithSubdomain:(NSString *)subdomain  {
+	return FORMAT(@"%@://%@", [self serverProtocol], [self serverHostWithSubdomain:subdomain]);
 }
 
 
-// EXPECT+1: MissingSemicolon, MissingNewline
-+ (void)badFormat:(NSString *)subdomain {
++ (void)badFormat:(NSString *)subdomain;{
 }
-
-
-// EXPECT+1: MissingNewline
-+ (void)badFormat:(NSString *)subdomain; {
-}
-
 
 // TODO(robbyw): Need a case for comment after ; but before {
 
